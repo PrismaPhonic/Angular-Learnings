@@ -8,11 +8,16 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
-    new Recipe(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://blog.bulletproof.com/wp-content/uploads/2019/01/54-of-the-Best-Whole30-Recipes-on-the-Internet-_header-752x401.jpg'
-    ),
+    new Recipe ({
+      name: 'A Test Recipe',
+      desc: 'This is simply a test',
+      imagePath: 'https://blog.bulletproof.com/wp-content/uploads/2019/01/54-of-the-Best-Whole30-Recipes-on-the-Internet-_header-752x401.jpg'
+    }),
+    new Recipe ({
+      name: 'A Test Recipe',
+      desc: 'This is simply a test',
+      imagePath: 'https://blog.bulletproof.com/wp-content/uploads/2019/01/54-of-the-Best-Whole30-Recipes-on-the-Internet-_header-752x401.jpg'
+    })
   ];
 
   constructor() { }
