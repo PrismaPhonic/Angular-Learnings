@@ -1,0 +1,12 @@
+<div class="container">
+  <input
+    class="mx-5"
+    type="text"
+    [(ngModel)]="username"
+  >
+  <p>{{ username }}</p>
+  <button
+    [disabled]="isUserEmpty()"
+    (click)="resetUser()"
+  >Reset Username</button>
+</div>
