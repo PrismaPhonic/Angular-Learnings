@@ -1,4 +1,4 @@
-import {Component, ContentChild, OnInit} from '@angular/core';
+import {Component, ContentChild, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-odd',
@@ -6,7 +6,7 @@ import {Component, ContentChild, OnInit} from '@angular/core';
   styleUrls: ['./odd.component.css']
 })
 export class OddComponent implements OnInit {
-  @ContentChild('odd') odd: number;
+  @Input() number: number;
 
   constructor() { }
 

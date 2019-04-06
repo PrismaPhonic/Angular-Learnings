@@ -18,11 +18,9 @@
     <app-game-control (timerEvent)="generateComponent($event)">
     </app-game-control>
     <ul>
-      <app-even *ngFor="let even of evens">
-        <p>Even - {{ even }}</p>
+      <app-even *ngFor="let even of evens" [number]="even">
       </app-even>
-      <app-odd *ngFor="let odd of odds">
-        <p>Odd - {{ odd }}</p>
+      <app-odd *ngFor="let odd of odds" [number]="odd">
       </app-odd>
     </ul>
   </div>
