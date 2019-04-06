@@ -18,13 +18,20 @@ export class HeaderComponent implements OnInit {
     this.displayShoppingListEvent.emit(this.displayShoppingList);
   }
 
-  toggleRecipeDisplay() {
-    this.displayRecipes = !this.displayRecipes;
-    this.displayRecipesEvent.emit(this.displayRecipes);
+  showRecipes() {
+    this.displayRecipes = true;
+    this.displayShoppingList = false;
+    this.emitEvents();
   }
 
-  toggleShoppingListDisplay() {
-    this.displayShoppingList = !this.displayShoppingList;
+  emitEvents() {
+    this.displayRecipesEvent.emit(this.displayRecipes);
     this.displayShoppingListEvent.emit(this.displayShoppingList);
+  }
+
+  showShoppingList() {
+    this.displayRecipes = false;
+    this.displayShoppingList = true;
+    this.emitEvents();
   }
 }
