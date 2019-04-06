@@ -1,7 +1,7 @@
 import {
   AfterContentChecked,
   AfterContentInit, AfterViewChecked, AfterViewInit,
-  Component,
+  Component, ContentChild,
   DoCheck, ElementRef,
   Input,
   OnChanges, OnDestroy,
@@ -25,6 +25,7 @@ export class ServerElementComponent implements
   AfterViewChecked,
   OnDestroy {
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('contentParagraph') paragraph: ElementRef;
 
   ngOnDestroy(): void {
     console.log('ngOnDestroy called!');
@@ -45,6 +46,7 @@ export class ServerElementComponent implements
   ngOnInit() {
     console.log('ngOnInit called!');
     console.log(`Text Content: ${this.header.nativeElement.textContent}`);
+    console.log(`Text Content of paragraph: ${this.paragraph.nativeElement.textContent}`);
   }
 
   ngDoCheck(): void {
@@ -53,6 +55,7 @@ export class ServerElementComponent implements
 
   ngAfterContentInit(): void {
     console.log('ngAfterContentInit called!');
+    console.log(`Text Content of paragraph: ${this.paragraph.nativeElement.textContent}`);
   }
 
   ngAfterContentChecked(): void {
