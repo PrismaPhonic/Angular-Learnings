@@ -22,6 +22,7 @@ import { AccountsService } from './accounts.service';
   ],
   providers: [
     LoggingService,
+    AccountsService
   ],
   bootstrap: [AppComponent]
 })
