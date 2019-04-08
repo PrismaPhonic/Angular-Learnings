@@ -1,9 +1,5 @@
-import { Injectable } from '@angular/core';
 import { Account } from './account.model';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class AccountsService {
   accounts: Account[] = [
     new Account('Master Account', 'active'),

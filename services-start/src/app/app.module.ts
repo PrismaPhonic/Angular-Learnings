@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { LoggingService } from './logging.service';
+import { AccountsService } from './accounts.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { LoggingService } from './logging.service';
     HttpModule
   ],
   providers: [
-    LoggingService
+    LoggingService,
   ],
   bootstrap: [AppComponent]
 })
