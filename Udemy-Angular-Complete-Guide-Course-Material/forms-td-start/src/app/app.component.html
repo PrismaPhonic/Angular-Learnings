@@ -11,6 +11,7 @@
               class="form-control"
               ngModel
               name="username"
+              required
             >
           </div>
           <button class="btn btn-default" type="button">Suggest an Username</button>
@@ -22,8 +23,11 @@
               name="email"
               class="form-control"
               ngModel
+              required
+              email
             >
           </div>
+          <p *ngIf="!f.controls.email.valid">Please enter a valid value!</p>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
@@ -37,7 +41,11 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button
+         class="btn btn-primary"
+         type="submit"
+         [disabled]="!f.valid"
+        >Submit</button>
       </form>
     </div>
   </div>
