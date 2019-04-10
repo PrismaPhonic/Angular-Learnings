@@ -8,8 +8,9 @@
   <div class="col-md-12 p-0">
     <ul class="list-group p-0">
       <app-recipe-item
-        *ngFor="let recipeEl of recipes"
+        *ngFor="let recipeEl of recipes; index as i"
         [recipe]="recipeEl"
+        [id]="i"
       ></app-recipe-item>
     </ul>
   </div>
