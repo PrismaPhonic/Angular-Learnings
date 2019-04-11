@@ -23,9 +23,6 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.signupForm.form.patchValue({
-      subscriptions: 'Advanced'
-    });
   }
 
   onSubmit() {
