@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,25 @@ export class AppComponent implements OnInit {
       }),
       gender: new FormControl('male'),
       hobbies: new FormArray([])
+    });
+    // this.signupForm.valueChanges.subscribe(
+    //   (value) => console.log(value)
+    // );
+    this.signupForm.statusChanges.subscribe(
+      (value) => console.log(value)
+    );
+    this.signupForm.setValue({
+      'userData': {
+        username: 'Peter',
+        email: 'Peter@test.com'
+      },
+      gender: 'male',
+      hobbies: ['music']
+    });
+    this.signupForm.patchValue({
+      'userData': {
+        username: 'Anna',
+      },
     });
   }
 
