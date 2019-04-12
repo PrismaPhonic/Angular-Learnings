@@ -36,7 +36,11 @@
               {{ editMode ? 'Update' : 'Add' }}
             </button>
             <button class="btn btn-danger mx-2" type="button">Delete</button>
-            <button class="btn btn-primary" type="button">Clear</button>
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="clearForm()"
+            >Clear</button>
           </div>
         </div>
       </fieldset>
