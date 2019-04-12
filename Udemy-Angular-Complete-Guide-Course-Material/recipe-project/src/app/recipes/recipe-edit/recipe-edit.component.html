@@ -42,13 +42,14 @@
                 type="text"
                 id="imagePath"
                 formControlName="imagePath"
+                #imagePath
               >
             </div>
           </div>
         </div>
-        <div class="row">
+        <div *ngIf="imagePath.value !== ''" class="row">
           <div class="col-12">
-            <img src="" class="img-fluid">
+            <img [src]="imagePath.value" class="img-fluid">
           </div>
         </div>
           <div
@@ -89,7 +90,11 @@
               >
             </div>
             <div class="col-2">
-              <button class="btn btn-danger">X</button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="removeIngredient(i)"
+              >X</button>
             </div>
           </div>
           <hr>
