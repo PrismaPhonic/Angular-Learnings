@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -66,7 +67,20 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.recipeForm);
+    if (this.editMode) {
+      this.recipeService.updateRecipe(this.id, this.collectRecipeFromForm());
+    } else {
+      this.recipeService.addRecipe(this.collectRecipeFromForm());
+    }
+  }
+
+  collectRecipeFromForm(): Recipe {
+    return new Recipe({
+      name: this.recipeForm.value.name,
+      desc: this.recipeForm.value.description,
+      imagePath: this.recipeForm.value.imagePath,
+      ingredients: this.recipeForm.value.ingredients
+    });
   }
 
   addIngredient() {
